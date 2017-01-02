@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <me.ideatolife.testproject.utils.TextWithTitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small"></me.ideatolife.testproject.utils.TextWithTitleView>
+
+        <me.ideatolife.testproject.utils.TextWithTitleView
+            android:id="@+id/description_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small">
+
+        </me.ideatolife.testproject.utils.TextWithTitleView>
+
+        <me.ideatolife.testproject.utils.TextWithTitleView
+            android:id="@+id/owner_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small">
+
+        </me.ideatolife.testproject.utils.TextWithTitleView>
+
+        <me.ideatolife.testproject.utils.TextWithTitleView
+            android:id="@+id/date_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small">
+
+        </me.ideatolife.testproject.utils.TextWithTitleView>
+
+        <me.ideatolife.testproject.utils.TagView
+            android:id="@+id/tag_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small">
+
+        </me.ideatolife.testproject.utils.TagView>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

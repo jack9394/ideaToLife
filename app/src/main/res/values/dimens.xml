@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_xmedium">15dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+
+    <!--default textView sizes-->
+    <dimen name="medium_text">16sp</dimen>
+    <dimen name="large_text">18sp</dimen>
+
+
+    <!--default image sizes-->
+    <dimen name="xxlarge_image">200dp</dimen>
+</resources>
