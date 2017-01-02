@@ -1,5 +1,6 @@
 package me.ideatolife.testproject.activities;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -56,6 +57,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void getFeeds() {
+        final ProgressDialog pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Loading...");
         performeAction = new PerformeAction.Builder<>()
                 .context(this)
                 .showLoader(false)
@@ -65,21 +68,25 @@ public class MainActivity extends BaseActivity {
                 .errorListener(new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        pDialog.dismiss();
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 })
                 .listener(new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        pDialog.dismiss();
                         FlickerHandler flickerHandler = new FlickerHandler(response);
                         flickrObjectArrayList = flickerHandler.getItems();
                         setfeedList();
                         swipeRefreshLayout.setRefreshing(false);
+
                     }
                 })
                 .build();
 
         performeAction.run();
+        pDialog.show();
     }
 
     private void setfeedList() {

@@ -40,7 +40,7 @@ public class LoadColorFromImage extends AsyncTask<Void, Void, Integer> {
     @Override
     protected Integer doInBackground(Void... params) {
         try {
-            bitmap = Glide.with(this.context).load(path).asBitmap().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(-1,-1).get();
+            bitmap = Glide.with(this.context).load(path).asBitmap().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(100,100).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

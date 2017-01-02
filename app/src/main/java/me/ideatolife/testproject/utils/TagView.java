@@ -47,29 +47,28 @@ public class TagView extends CardView {
         titleView.setText(title);
     }
 
-    public void setTitleWithTags(String title,String tags){
+    public void setTitleWithTags(String title, String tags) {
         setTitle(title);
         setTags(tags);
     }
 
     public void setTags(String tags) {
-        if (tags.length() > 0) {
-            String[] parts = tags.split(" ");
-
-            for (String tag : parts) {
-                TextView textView = new TextView(getContext());
-                textView.setBackgroundResource(R.drawable.tag_background);
-                textView.setTextColor(Color.BLACK);
-                textView.setText(tag);
-                FlowLayout.LayoutParams params= new FlowLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-                params.leftMargin=0;
-                params.rightMargin=Utils.dipToPixels(getContext(),5);
-                params.bottomMargin=Utils.dipToPixels(getContext(),5);
-                textView.setLayoutParams(params);
-                linearLayout.addView(textView);
-            }
-        } else {
-            setVisibility(GONE);
+        if (tags.length() == 0) {
+            tags = "No_tags";
         }
-    }
+        String[] parts = tags.split(" ");
+
+        for (String tag : parts) {
+            TextView textView = new TextView(getContext());
+            textView.setBackgroundResource(R.drawable.tag_background);
+            textView.setTextColor(Color.BLACK);
+            textView.setText(tag);
+            FlowLayout.LayoutParams params = new FlowLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.leftMargin = 0;
+            params.rightMargin = Utils.dipToPixels(getContext(), 5);
+            params.bottomMargin = Utils.dipToPixels(getContext(), 5);
+            textView.setLayoutParams(params);
+            linearLayout.addView(textView);
+        }
+}
 }
